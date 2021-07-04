@@ -1,0 +1,10 @@
+<% if bookmark.category.public %>
+<tr id="bookmark_<%= bookmark.id %>">
+    <td><%= bookmark.url_address %></td>
+    <td><%= bookmark.type.name %></td>
+    <td><%= bookmark.category.name %></td>
+    <td><%= link_to 'show', bookmark %></td>
+    <td><%= link_to 'Edit', edit_bookmark_path(bookmark), remote: true %></td>
+    <td><%= link_to 'Erase', bookmark, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
